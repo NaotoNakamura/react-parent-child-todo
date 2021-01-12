@@ -1,4 +1,5 @@
 import React from 'react';
+import ChildForm from './ChildForm';
 
 const ParentForm = (props) => {
   const handleChange = e => {props.setParentText(e.target.value)}
@@ -16,9 +17,8 @@ const ParentForm = (props) => {
       {props.text.map((item, i) => (
          <div key={i}>
           <li>
-          <b>{item.parentText}</b>
-          <input></input>
-          <button>子追加</button>
+          <b>親ID{item.id}：親タスク名{item.parentText}</b>
+          <ChildForm/>
           </li>
          </div>
       ))}
