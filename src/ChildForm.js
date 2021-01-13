@@ -5,7 +5,7 @@ const ChildForm = (props) => {
   return (
     <div>
       <input></input>
-      <button>子追加</button>
+      <button>{props.parentId}の子追加</button>
     </div>
   );
 }

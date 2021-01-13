@@ -21,7 +21,7 @@ const ParentForm = () => {
          <div key={i}>
           <li>
           <b>親ID{item.id}：親タスク名{item.parentText}</b>
-          <ChildForm/>
+          <ChildForm parentId={item.id}/>
           </li>
          </div>
       ))}
