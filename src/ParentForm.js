@@ -1,20 +1,23 @@
 import React from 'react';
 import ChildForm from './ChildForm';
 
-const ParentForm = (props) => {
-  const handleChange = e => {props.setParentText(e.target.value)}
+const ParentForm = () => {
+  const [text, setText] = React.useState([{id: 1, parentText: 'test'}]);
+  const [parentText, setParentText] = React.useState('');
+
+  const handleChange = e => {setParentText(e.target.value)}
   const handleClick = () => {
-    props.setText([...props.text, {
-      parentText: props.parentText,
+    setText([...text, {
+      parentText: parentText,
     }])
-    props.setParentText('')
+    setParentText('')
   }
 
   return (
     <div>
-      <input value={props.parentText} onChange={handleChange}></input>
+      <input value={parentText} onChange={handleChange}></input>
       <button onClick={handleClick}>親追加</button>
-      {props.text.map((item, i) => (
+      {text.map((item, i) => (
          <div key={i}>
           <li>
           <b>親ID{item.id}：親タスク名{item.parentText}</b>

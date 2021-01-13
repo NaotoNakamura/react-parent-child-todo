@@ -2,7 +2,6 @@ import React from 'react';
 
 const ChildForm = (props) => {
 
-
   return (
     <div>
       <input></input>
