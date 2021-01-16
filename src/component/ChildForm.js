@@ -18,9 +18,7 @@ const ChildForm = (props) => {
       <button onClick={handleClick}>{props.parentId}の子追加</button>
       {text.map((item, i) => (
          <div key={i}>
-          <li>
-          <b>{item.childText}</b>
-          </li>
+            {item.childText}
          </div>
       ))}
     </div>

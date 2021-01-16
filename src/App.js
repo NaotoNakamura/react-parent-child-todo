@@ -1,4 +1,4 @@
-import ParentForm from './ParentForm';
+import ParentForm from './component/ParentForm';
 import React from 'react';
 import './App.css';
 

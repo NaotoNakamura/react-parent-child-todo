@@ -2,13 +2,28 @@ import React from 'react';
 import ChildForm from './ChildForm';
 
 const ParentForm = () => {
-  const [text, setText] = React.useState([{id: 1, parentText: 'test'}]);
+  const target = {
+    "id" : 1,
+    "target_title" : "親タイトルテスト",
+    "tasks" : [
+        {
+          "id": 1,
+          "text": "child",
+          "period_kind": "DAY",
+          "start_date": "2021/1/11",
+          "end_date": "2021/1/12",
+          "isDone": false 
+        }
+    ]
+  }
+
+  const [text, setText] = React.useState([target]);
   const [parentText, setParentText] = React.useState('');
 
   const handleChange = e => {setParentText(e.target.value)}
   const handleClick = () => {
     setText([...text, {
-      parentText: parentText,
+      target_title: parentText,
     }])
     setParentText('')
   }
@@ -19,10 +34,9 @@ const ParentForm = () => {
       <button onClick={handleClick}>親追加</button>
       {text.map((item, i) => (
          <div key={i}>
-          <li>
-          <b>親ID{item.id}：親タスク名{item.parentText}</b>
+          <p>親ID{item.id}</p>
+          <p>親タスク名{item.target_title}</p>
           <ChildForm parentId={item.id}/>
-          </li>
          </div>
       ))}
     </div>
