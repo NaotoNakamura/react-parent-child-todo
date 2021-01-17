@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ChildForm = (props) => {
-  const [text, setText] = React.useState([]);
-  const [childText, setChildText] = React.useState('');
+  const [text, setText] = React.useState([])
+  const [childText, setChildText] = React.useState('')
 
   const handleChange = e => {setChildText(e.target.value)}
   const handleClick = () => {
