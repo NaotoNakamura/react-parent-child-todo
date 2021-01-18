@@ -9,8 +9,7 @@ const ParentForm = ({ text, parentText, handleChange, handleClick }) => {
       <button onClick={handleClick}>親追加</button>
       {text.map((item, i) => (
          <div key={i}>
-          <p>親ID{item.id}</p>
-          <p>親タスク名{item.target_title}</p>
+          <p>{item.id} | {item.target_title}</p>
           <ChildForm parentId={item.id}/>
          </div>
       ))}
