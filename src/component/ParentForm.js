@@ -1,12 +1,12 @@
 import React from 'react';
 import ChildForm from './ChildForm';
+import Modal from './Modal';
 
-const ParentForm = ({ text, parentText, handleChange, handleClick }) => {
+const ParentForm = ({ text, parentText, handleChange, handleClick, isShow, setShowStatus }) => {
 
   return (
     <div>
-      <input value={parentText} onChange={handleChange}></input>
-      <button onClick={handleClick}>親追加</button>
+      <Modal isShow={isShow} parentText={parentText} setShowStatus={setShowStatus} handleChange={handleChange} handleClick={handleClick}/>
       {text.map((item, i) => (
          <div key={i}>
           <p>{item.id} | {item.target_title}</p>
