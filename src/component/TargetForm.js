@@ -1,8 +1,8 @@
 import React from 'react';
-import ChildForm from './ChildForm';
+import TaskForm from './TaskForm';
 import Modal from './Modal';
 
-const ParentForm = ({ text, parentText, handleChange, handleClick, isShow, setShowStatus }) => {
+const TargetForm = ({ text, parentText, handleChange, handleClick, isShow, setShowStatus }) => {
 
   return (
     <div>
@@ -10,11 +10,11 @@ const ParentForm = ({ text, parentText, handleChange, handleClick, isShow, setSh
       {text.map((item, i) => (
          <div key={i}>
           <p>{item.id} | {item.target_title}</p>
-          <ChildForm parentId={item.id}/>
+          <TaskForm parentId={item.id}/>
          </div>
       ))}
     </div>
   );
 }
 
-export default ParentForm;
+export default TargetForm;

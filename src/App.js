@@ -1,4 +1,4 @@
-import ParentForm from './component/ParentForm';
+import TargetForm from './component/TargetForm';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import React from 'react';
 import './App.css';
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       TODOフォーム<AddCircleOutlineIcon onClick={() => setShowStatus(true)}/>
-      <ParentForm text={text} parentText={parentText} handleChange={handleChange} handleClick={handleClick} isShow={isShow} setShowStatus={setShowStatus}/>
+      <TargetForm text={text} parentText={parentText} handleChange={handleChange} handleClick={handleClick} isShow={isShow} setShowStatus={setShowStatus}/>
     </div>
   );
 }

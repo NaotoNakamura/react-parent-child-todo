@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChildForm = (props) => {
+const TaskForm = (props) => {
   const [text, setText] = React.useState([])
   const [childText, setChildText] = React.useState('')
 
@@ -25,4 +25,4 @@ const ChildForm = (props) => {
   );
 }
 
-export default ChildForm;
+export default TaskForm;
