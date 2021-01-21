@@ -16,15 +16,15 @@ export const useTarget = () => {
     ]
   }
 
-  const [text, setText] = React.useState([target])
-  const [parentText, setParentText] = React.useState('')
+  const [targets, setTarget] = React.useState([target])
+  const [targetText, setTargetText] = React.useState('')
 
-  const handleChange = e => {setParentText(e.target.value)}
-  const handleClick = () => {
-    setText([...text, {
-      target_title: parentText,
+  const handleChange = e => {setTargetText(e.target.value)}
+  const targetCreate = () => {
+    setTarget([...targets, {
+      target_title: targetText,
     }])
-    setParentText('')
+    setTargetText('')
   }
-  return {text, parentText, handleChange, handleClick};
+  return {targets, targetText, handleChange, targetCreate};
 }

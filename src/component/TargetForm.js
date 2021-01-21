@@ -2,12 +2,12 @@ import React from 'react';
 import TaskForm from './TaskForm';
 import Modal from './Modal';
 
-const TargetForm = ({ text, parentText, handleChange, handleClick, isShow, setShowStatus }) => {
+const TargetForm = ({ targets, targetText, handleChange, targetCreate, isShow, setShowStatus }) => {
 
   return (
     <div>
-      <Modal isShow={isShow} parentText={parentText} setShowStatus={setShowStatus} handleChange={handleChange} handleClick={handleClick}/>
-      {text.map((item, i) => (
+      <Modal isShow={isShow} targetText={targetText} setShowStatus={setShowStatus} handleChange={handleChange} targetCreate={targetCreate}/>
+      {targets.map((item, i) => (
          <div key={i}>
           <p>{item.id} | {item.target_title}</p>
           <TaskForm parentId={item.id}/>
