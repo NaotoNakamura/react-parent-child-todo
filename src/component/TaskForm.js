@@ -1,24 +1,24 @@
 import React from 'react';
 
 const TaskForm = (props) => {
-  const [text, setText] = React.useState([])
-  const [childText, setChildText] = React.useState('')
+  const [tasks, setTask] = React.useState([])
+  const [taskText, setTaskText] = React.useState('')
 
-  const handleChange = e => {setChildText(e.target.value)}
+  const handleChange = e => {setTaskText(e.target.value)}
   const handleClick = () => {
-    setText([...text, {
-      childText: childText,
+    setTask([...tasks, {
+      text: taskText,
     }])
-    setChildText('')
+    setTaskText('')
   }
 
   return (
     <div>
-      <input value={childText} onChange={handleChange}></input>
+      <input value={taskText} onChange={handleChange}></input>
       <button onClick={handleClick}>{props.parentId}の子追加</button>
-      {text.map((item, i) => (
+      {tasks.map((item, i) => (
          <div key={i}>
-            {item.childText}
+            {item.text}
          </div>
       ))}
     </div>
